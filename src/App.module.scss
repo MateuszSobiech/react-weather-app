@@ -1,4 +1,4 @@
-.App-header {
+.AppHeader {
   background-color: #f3f09f;
   min-height: 100vh;
   display: flex;
@@ -6,12 +6,12 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-}
 
-.App-header input {
-  font-size: 25px;
-  border-radius: 20px;
-  text-align: center;
+  input {
+    font-size: 25px;
+    border-radius: 20px;
+    text-align: center;
+  }
 }
 
 .card {

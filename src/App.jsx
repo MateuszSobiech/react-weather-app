@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import styles from './App.module.scss';
 
 const App = () => {
   const getBaseURL = (city) =>
@@ -26,22 +26,24 @@ const App = () => {
   }, [inputValue]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
         <input type="text" value={inputValue} onChange={handleChange} />
-        {data && (
-          <div className="card">
-            <p>Temperature: {Math.round((data.main.temp - 273.15) * 100) / 100} &#8451;</p>
-            <p>
-              Feels like: {Math.round((data.main.feels_like - 273.15) * 100) / 100} &#8451;
-            </p>
-            <img
-              src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-              alt=""
-            />
-            <p className="none">{data.weather[0].main}</p>
-          </div>
-        )}
+        <div className={styles.card}>
+          {data && (
+            <div>
+              <p>Temperature: {Math.round((data.main.temp - 273.15) * 100) / 100} &#8451;</p>
+              <p>
+                Feels like: {Math.round((data.main.feels_like - 273.15) * 100) / 100} &#8451;
+              </p>
+              <img
+                src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                alt=""
+              />
+              <p className={styles.none}>{data.weather[0].main}</p>
+            </div>
+          )}
+        </div>
       </header>
     </div>
   );
