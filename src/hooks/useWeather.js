@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export const useWeather = () => {
   const getBaseURL = (city) =>
@@ -7,13 +7,13 @@ export const useWeather = () => {
 
   const [data, setData] = useState();
 
-  const getWeatherData = (city) => {
+  const getWeatherData = useCallback((city) => {
     const url = getBaseURL(city);
     axios
       .get(url)
       .then((response) => setData(response.data))
       .catch(() => setData());
-  };
+  }, []);
 
   return {
     getWeatherData,
