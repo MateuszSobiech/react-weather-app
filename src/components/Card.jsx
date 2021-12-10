@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useWeather } from '../hooks/useWeather';
 import { useSelector } from 'react-redux';
-import styles from '../App.module.scss';
+import { Wrapper, Paragraph } from './Card.styles';
 
 const Card = () => {
   const inputValue = useSelector((state) => state);
@@ -18,18 +18,18 @@ const Card = () => {
   }, [inputValue, getWeatherData]);
 
   return (
-    <div className={styles.card}>
+    <Wrapper>
       {data.name ? (
         <div>
           <p>Temperature: {data.temp} &#8451;</p>
           <p>Feels like: {data.feels} &#8451;</p>
           <img src={data.iconSrc} alt="" />
-          <p className={styles.none}>{data.name}</p>
+          <Paragraph>{data.name}</Paragraph>
         </div>
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </Wrapper>
   );
 };
 
