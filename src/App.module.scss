@@ -29,3 +29,9 @@
   padding: 0;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .AppHeader {
+    flex-direction: column-reverse;
+  }
+}
