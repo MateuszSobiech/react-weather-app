@@ -14,4 +14,8 @@ export const Wrapper = styled.div`
     border-radius: 20px;
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
