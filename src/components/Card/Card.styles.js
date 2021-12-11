@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   padding: 30px;
   border-radius: 30px;
   box-shadow: -1px 9px 24px -12px rgba(66, 68, 90, 1);
+  user-select: none;
 `;
 
 export const Paragraph = styled.p`

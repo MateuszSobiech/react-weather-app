@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useWeather } from '../hooks/useWeather';
+import { useWeather } from 'hooks/useWeather';
 import { useSelector } from 'react-redux';
 import { Wrapper, Paragraph } from './Card.styles';
 

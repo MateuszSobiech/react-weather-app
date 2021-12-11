@@ -1,5 +1,5 @@
 import React from 'react';
-import { changeInput } from '../store';
+import { changeInput } from 'store';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Input = () => {
