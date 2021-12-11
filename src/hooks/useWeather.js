@@ -7,12 +7,15 @@ export const useWeather = () => {
 
   const [data, setData] = useState();
 
-  const getWeatherData = useCallback((city) => {
+  const getWeatherData = useCallback(async (city) => {
     const url = getBaseURL(city);
-    axios
-      .get(url)
-      .then((response) => setData(response.data))
-      .catch(() => setData());
+
+    try {
+      const response = await axios.get(url);
+      setData(response.data);
+    } catch (err) {
+      setData();
+    }
   }, []);
 
   return {

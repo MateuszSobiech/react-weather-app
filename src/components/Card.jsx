@@ -8,8 +8,6 @@ const Card = () => {
   const { getWeatherData, data } = useWeather();
 
   useEffect(() => {
-    // console.log('a');
-
     const timer = setTimeout(() => {
       getWeatherData(inputValue);
     }, 500);
